@@ -1,0 +1,238 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: #fff;
+  transition: all .3s;
+}
+
+body
+{
+  background-color: #0f172a;
+  padding-bottom: 499px;
+}
+
+.pattern
+{
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  background-color: #0f172a;
+  z-index: -1;
+}
+
+.wrapper
+{
+  position: relative;
+  margin: 0 10vw;
+  padding: 20px;
+  z-index: 10;
+  /* height: 100vh; */
+  padding-top: 80px;
+}
+
+.wrapper h1
+{
+  font-size: min(10vw, 50px);
+  font-weight: 700;
+  margin: 0 0 20px;
+  text-shadow : 2px 2px 3px  #000,
+  3px 3px 0px blue;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+}
+.wrapper h1::selection
+{
+  background-color: transparent;
+}
+
+.wrapper h1 img
+{
+  width: 40px;
+  margin-right: 10px;
+}
+
+.wrapper button
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 20px;
+  margin-bottom: 20px;
+  border: 0;
+  outline: 0;
+  border-radius: 30px;
+  font-size: 25px;
+  cursor: pointer;
+  /* background: #000; */
+  background: transparent;
+  transition: all .3s;
+  border: .01px solid #ddd;
+}
+
+.wrapper button:hover
+{
+  box-shadow: 0 0 4px 2px blue;
+  scale: .99;
+  border-color: transparent;
+}
+
+.wrapper button img
+{
+  width: 30px;
+  margin-right: 10px;
+}
+
+.notes-container
+{
+  width: 100%;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(45%, 500px));
+  gap: 15px;
+  justify-content: stretch;
+}
+
+
+
+.notes-container .note
+{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 20px;
+  border: 1px solid blue;
+  border-radius: 5px;
+  transition: all .3s;
+  /* max-width: 500px; */
+  min-height: 150px;
+  font-size: 18px;
+  /* margin: 10px 0; */
+  z-index: 0;
+}
+
+.notes-container .note .note-title
+{
+  font-size: 30px;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  margin-bottom: 0;
+  max-width: 85%;
+  word-break: break-all;
+  text-wrap: wrap;
+}
+
+
+.notes-container .note:hover
+{
+  box-shadow: 0 0px 5px 5px black;
+}
+
+.notes-container .note .note-content
+{
+  outline: 0;
+  font-size: 18px;
+  min-width: 100%;
+  color: #ddd;
+  max-width: 100%;
+  height: 150px;
+  border: 0;
+  min-height: fit-content;
+  scroll-behavior: smooth;
+  background-color: transparent;
+  margin-top: 10px;
+  border-top: 1px solid blue;
+  padding: 10px 0;
+  resize: none;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 255, 0.451) #0f172a;
+  overflow-x: hidden;
+}
+
+
+
+.notes-container .note .copy
+{
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  cursor: pointer;
+  font-size: 18px;
+  background: transparent;
+  padding: 8px 15px;
+  border-radius: 11px;
+  border: 1px solid blue;
+  display: flex;
+  align-items: center;
+  transition: all .3s;
+}
+
+.notes-container .note .copy img
+{
+  width: 22px;
+  height: 22px;
+  margin-right: 8px;
+  position: static;
+  vertical-align: middle;
+}
+
+
+.notes-container .note .copy:hover
+{
+  box-shadow: 0 0 5px 1px #000;
+}
+
+
+
+.note img
+{
+  position: absolute;
+  width: 25px;
+  aspect-ratio: 1;
+  bottom: 8px;
+  right: 10px;
+  z-index: 1;
+  cursor: pointer;
+}
+
+@media (max-width:768px)
+{
+  .notes-container
+  {
+    grid-template-columns: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  .wrapper h1
+  {
+    font-size: 30px;
+  }
+  .wrapper .btn
+  {
+    padding: 10px 20px;
+    font-size: 20px;
+  }
+
+  .note-title
+  {
+    font-size: 24px !important;
+  }
+
+  .note-title::placeholder
+  {
+    font-size: 24px;
+  }
+
+  .note-content
+  {
+    font-size: 18px !important;
+  }
+  .note-content::placeholder
+  {
+    font-size: 18px;
+  }
+}
